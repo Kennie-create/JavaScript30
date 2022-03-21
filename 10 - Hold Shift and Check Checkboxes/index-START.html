@@ -107,9 +107,17 @@ function handleCheck(event) {
   if(event.shiftKey && this.checked){
 
     checkboxes.forEach(checkbox => {
-      if(checkbox === this || checkbox === lastChecked){
-        inBetween =! inBetween
+      // if(checkbox === this || checkbox === lastChecked){
+      //   inBetween =! inBetween
+      // }
+      
+      if(checkbox === this){
+        inBetween = false;
       }
+      else if(checkbox === lastChecked) {
+        inBetween = true;
+      }
+
       if (inBetween){
         checkbox.checked = true;
       }
